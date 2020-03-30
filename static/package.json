@@ -1,0 +1,17 @@
+{
+    "name": "Covid-19",
+    "version": "1.0.0",
+    "description": "Data Visualization for Covid-19",
+    "main": "index.js",
+    "author": "Pan",
+    "license": "MIT",
+    "dependencies": {
+        "echarts": "^4.6.0",
+        "echarts-leaflet": "^1.1.0",
+        "jquery": "^3.4.1",
+        "leaflet": "^1.6.0",
+        "chart.js": "^2.9.3",
+        "feather-icons": "^4.26.0",
+        "bootstrap": "^4.4.1"
+    }
+}
