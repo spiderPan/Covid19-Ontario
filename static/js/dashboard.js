@@ -9,7 +9,6 @@ jQuery(function($) {
         resolved_cases = [],
         deceased_cases = [];
 
-    console.table(ontario_data);
     ontario_data.forEach(function(daily) {
         dates.push(daily['date']);
         confirmed_cases.push(daily['confirmed']['total']);
