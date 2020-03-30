@@ -1,7 +1,7 @@
 version: "3.3"
 
 services:
-  php:
+  web:
     environment:
       VIRTUAL_HOST: covid19.thepan.cn
       LETSENCRYPT_HOST: covid19.thepan.cn
