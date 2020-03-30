@@ -1,0 +1,13 @@
+version: "3.3"
+
+services:
+  php:
+    environment:
+      VIRTUAL_HOST: covid19.thepan.cn
+      LETSENCRYPT_HOST: covid19.thepan.cn
+      LETSENCRYPT_EMAIL: panbanglanfeng@gmail.com
+
+networks:
+  default:
+    external:
+      name: webproxy
