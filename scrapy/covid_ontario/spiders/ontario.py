@@ -2,7 +2,8 @@
 import scrapy
 from covid_ontario.items import CovidOntarioStatusItem
 from scrapy.utils.response import open_in_browser
-import datetime
+from datetime import datetime
+import time
 
 
 class OntarioSpider(scrapy.Spider):
@@ -43,7 +44,11 @@ class OntarioSpider(scrapy.Spider):
                     # self.logger.warning('Value %s', value)
                     daily_data[key] = value
 
-        date_timestamp = datetime.datetime.now().strftime("%B %d, %Y")
+        today_date = datetime.date(datetime.now())
+        date_timestamp = time.mktime(today_date.timetuple())
+
+        self.logger.warning('Date %s', today_date)
+        self.logger.warning('Time %s', date_timestamp)
         status_item['date'] = date_timestamp
         status_item['confirmed'] = {
             'total': daily_data['confirmed'],
