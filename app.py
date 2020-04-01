@@ -25,7 +25,7 @@ def _jinja2_filter_datetime(date, fmt=None):
 def index():
     status = mongo.db.status
     status_data = []
-    for s in status.find():
+    for s in status.find().sort("date"):
         status_data.append({'date': _jinja2_filter_datetime(int(s.get('date'))),
                             'deceased': s.get('deceased',0),
                             'confirmed': s.get('confirmed',0),
