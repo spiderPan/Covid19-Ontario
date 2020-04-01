@@ -24,8 +24,10 @@ class OntarioSpider(scrapy.Spider):
             'Male': 'male',
             'Female': 'female',
             '19': 'youth',
-            '20-64': 'adult',
-            '65': 'senior',
+            '20': '20-39',
+            '40': '40-59',
+            '60': '60-79',
+            '80': 'senior',
         }
         # status_table = response.css('.field-type-text-with-summary table')[0]
         # self.logger.warning('Table HTML %s', response)
@@ -55,7 +57,9 @@ class OntarioSpider(scrapy.Spider):
             'male': daily_data['male'],
             'female': daily_data['female'],
             'youth': daily_data['youth'],
-            'adult': daily_data['adult'],
+            '20-39': daily_data['20-39'],
+            '40-59': daily_data['40-59'],
+            '60-79': daily_data['60-79'],
             'senior': daily_data['senior'],
         }
         status_item['deceased'] = daily_data['deceased']
