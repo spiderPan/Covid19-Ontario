@@ -17,6 +17,7 @@ NEWSPIDER_MODULE = 'covid_ontario.spiders'
 
 # Crawl responsibly by identifying yourself (and your website) on the user-agent
 #USER_AGENT = 'covid_ontario (+http://www.yourdomain.com)'
+USER_AGENT = 'googlebot'
 
 # Obey robots.txt rules
 ROBOTSTXT_OBEY = True
@@ -64,9 +65,15 @@ ROBOTSTXT_OBEY = True
 
 # Configure item pipelines
 # See https://docs.scrapy.org/en/latest/topics/item-pipeline.html
-#ITEM_PIPELINES = {
-#    'covid_ontario.pipelines.CovidOntarioPipeline': 300,
-#}
+ITEM_PIPELINES = {
+   'covid_ontario.pipelines.MongoDBPipeline': 300,
+}
+MONGODB_SERVER = "mongo" #localhost 
+MONGODB_PORT = 27017
+MONGODB_DB = "covid_ontario"
+MONGODB_STATUS_COLLECTION = "status"
+MONGODB_USER = "root"
+MONGODB_PASS = "example"
 
 # Enable and configure the AutoThrottle extension (disabled by default)
 # See https://docs.scrapy.org/en/latest/topics/autothrottle.html
